@@ -12,7 +12,7 @@
         "Id": "openwindowonactivescreen",
         "Version": "0.1",
         "License": "GPLv3",
-        "Website": "https://github.com/username/myscript"
+        "Website": "https://github.com/MagiusCHE/p6-owac.git"
     },
     "X-Plasma-API": "javascript",
     "X-Plasma-MainScript": "code/main.js",
