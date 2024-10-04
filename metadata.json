@@ -1,0 +1,20 @@
+{
+    "KPlugin": {
+        "Name": "Open Window on Active Screen",
+        "Description": "Opens new windows on the monitor that has the mouse cursor",
+        "Icon": "preferences-system-windows",
+        "Authors": [
+            {
+                "Email": "magiusche@magius.it",
+                "Name": "MagiusCHE"
+            }
+        ],
+        "Id": "openwindowonactivescreen",
+        "Version": "0.1",
+        "License": "GPLv3",
+        "Website": "https://github.com/username/myscript"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js",
+    "KPackageStructure": "KWin/Script"
+}

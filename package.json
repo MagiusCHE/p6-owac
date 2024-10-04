@@ -1,0 +1,12 @@
+{
+  "name": "p6-owac",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install": "kpackagetool6 --type=KWin/Script -i ./ && kwriteconfig6 --file kwinrc --group Plugins --key openwindowonactivescreenEnabled true && qdbus org.kde.KWin /KWin reconfigure",
+    "uninstall": "rm -rf $HOME/.local/share/kwin/scripts/openwindowonactivescreen && kwriteconfig6 --file kwinrc --group Plugins --key openwindowonactivescreenEnabled --delete && qdbus org.kde.KWin /KWin reconfigure && echo \"You should call 'kwin_x11 --replace &' to commit uninstall changes.\""
+  },
+  "author": "",
+  "license": "ISC"
+}
