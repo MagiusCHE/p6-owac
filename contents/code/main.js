@@ -1,12 +1,11 @@
 // initialization
 const config = {
-    classList: [] /*readConfig("classList", "")
+    classList: readConfig("classList", "")
         .toLowerCase()
-        .split("\n")
-        .map((s) => s.trim())*/,
-    allowMode: true, //readConfig("allowMode", true),
-    denyMode: false, //readConfig("denyMode", false),
-    debugMode: true, //readConfig("debugMode", true)
+        .split(",")
+        .map((s) => s.trim()),
+    allowMode: readConfig("allowMode", false),
+    debugMode: false
 };
 
 function debug(...args) {
@@ -29,7 +28,7 @@ workspace.windowAdded.connect(window => {
     // abort conditions
     if (!window // null
         || (config.allowMode && config.classList.includes(String(window.resourceClass))) // using allowmode and window class is in list
-        || (config.denyMode && !config.classList.includes(String(window.resourceClass))) // using denymode and window class is not in list
+        || (!config.allowMode && !config.classList.includes(String(window.resourceClass))) // using denymode and window class is not in list
         || !(window.resizeable && window.moveable && window.moveableAcrossScreens) // not regeomtrizable
         || window.screen == activeScreen) // already on right screen
         return;
